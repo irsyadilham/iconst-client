@@ -1,26 +1,43 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+@layer base {
+  h1, h2, h3, h4 {
+    @apply font-bold;
   }
-  body {
-    color: white;
-    background: black;
+
+  p, label {
+    @apply text-gray;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-[480px] mx-auto;
+  }
+
+  .input {
+    @apply mt-[0.7em] text-[.9rem] py-[0.7em] px-1 bg-input-bg rounded-md w-full outline-primary border-[1px] border-light-gray;
+  }
+
+  .select {
+    @apply mt-[0.7em] text-[.9rem] py-[0.7em] px-1 bg-input-bg rounded-md w-full outline-primary border-[1px] border-light-gray;
+  }
+
+  .label {
+    @apply block text-sm text-gray font-semibold;
+  }
+
+  .button {
+    @apply bg-primary w-full rounded-md py-[.8rem] text-sm text-white font-semibold;
+  }
+
+  .button-fitted {
+    @apply bg-primary rounded-md py-[.8rem] px-2 text-sm text-white font-semibold;
+  }
+
+  .status {
+    @apply text-xs text-white font-semibold px-[.8em] py-[.5em] rounded;
   }
 }
