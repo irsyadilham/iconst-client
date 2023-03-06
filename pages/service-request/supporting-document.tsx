@@ -80,7 +80,7 @@ const SupportingDocument: NextPage = () => {
                 <div className="relative flex flex-col items-center bg-input-bg border-[1px] border-light-gray rounded-md py-3 mt-1">
                   <div className="absolute top-0 left-0 z-10 w-full h-full flex justify-center items-center flex-col">
                     <h4 className="text-gray">{file.file.name}</h4>
-                    <button onClick={update} className="text-gray mt-[.5em] text-sm">Click to change</button>
+                    <button type="button" onClick={update} className="text-gray mt-[.5em] text-sm">Click to change</button>
                     <a href={file.url} target="_blank" className="text-sm mt-[.5em] text-gray font-semibold">View file</a>
                   </div>
                   <input onChange={upload} ref={credential} className="opacity-0" type="file"/>

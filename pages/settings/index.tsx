@@ -32,7 +32,7 @@ const Settings: NextPage = () => {
   }, []);
 
   return (
-    <main className="mx-2 pt-3 pb-2">
+    <main className="pt-3 pb-2 container">
       <Back text="Back"/>
       <h1 className="font-bold text-2xl mt-2">Settings</h1>
 

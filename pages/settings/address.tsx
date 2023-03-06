@@ -63,7 +63,7 @@ const AddressComp: NextPage = () => {
   }
 
   return (
-    <main className="mx-2 pt-3 pb-2">
+    <main className="container pt-3 pb-2">
       <Back text="Settings"/>
 
       <h2 className="mt-2 text-2xl font-bold">Address</h2>

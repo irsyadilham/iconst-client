@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import App from '../types/context';
+import type { App } from '../types/context';
 
 const AppContext = createContext<App | null>(null);
 

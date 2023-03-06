@@ -1,7 +1,7 @@
-import { Address } from './personal';
-import { Service } from './service';
+import type { Address } from './personal';
+import type { Service } from './service';
 
-export interface ServiceRequest {
+export type ServiceRequest = {
   service: Service;
   title: string;
   duration: number;

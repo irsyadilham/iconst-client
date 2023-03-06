@@ -17,10 +17,14 @@ const Succeed: NextPage = () => {
   const statusUpdate = async () => {
     try {
       context?.loading.dispatch({type: 'ON'});
-      await put(`/jobs/${router.query.order_id}/payment-status`, { status_id: parseInt(router.query.status_id as string) });
+      const data = {
+        status_id: parseInt(router.query.status_id as string),
+        billcode: router.query.billcode
+      };
+      await put(`/jobs/${router.query.order_id}/payment-status`, data);
       context?.loading.dispatch({type: 'OFF'});
       gsap.to(counter.current, { innerText: 0, ease: 'none', snap: 'innerText', duration: 10, onComplete() {
-        router.push('/');
+        router.push('/hires');
       }});
     } catch (err: any) {
       if (err.status === 403) {
@@ -37,10 +41,10 @@ const Succeed: NextPage = () => {
   }, [router.isReady]);
 
   return (
-    <main className="container flex flex-col items-center justify-center h-screen">
+    <main className="container flex flex-col items-center justify-center h-screen px-2">
       <Image src={paymentStatus ? '/succeed.svg' : '/failed.svg'} alt="status" width={100} height={100}/>
-      <p className="mt-2">{paymentStatus ? 'Payment succeed & service request submitted succeesfully' : 'Payment failed, service request unsuccessful'}</p>
-      <Link className="w-[60%] mt-2" href="/">
+      <p className="mt-2 text-center">{paymentStatus ? 'Payment succeed & service request submitted succeesfully' : 'Payment failed, service request unsuccessful'}</p>
+      <Link className="w-[60%] mt-2" href="/hires">
         <button className="button">Back to main in <span ref={counter}>10</span></button>
       </Link>
     </main>

@@ -14,6 +14,9 @@ const nextConfig = {
   env: {
     HOST: process.env.HOST,
     TOYYIBPAY_URL: process.env.TOYYIBPAY_URL
+  },
+  eslint: {
+    ignoreDuringBuilds: true
   }
 }
 

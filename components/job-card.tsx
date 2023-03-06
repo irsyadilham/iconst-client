@@ -26,10 +26,22 @@ const JobCard: NextPage<args> = ({job}) => {
       </div>
 
       {(() => {
+        if (job.status.name === 'Quotation ready') {
+          return (
+            <div className="mt-1">
+              <h3 className="text-primary text-lg">{job.vendors.length}</h3>
+              <p className="text-xs">Total quotations</p>
+            </div>
+          );
+        }
+      })()}
+
+      {(() => {
         if (job?.status.name !== 'Cancelled') {
           return (
-            <div id="wrapper" className="flex justify-between items-end">
-              <div className="mt-1">
+            <div id="wrapper" className="flex justify-between items-end mt-1">
+
+              <div className={job.status.name !== 'Request' ? 'opacity-0' : ''}>
                 <h3 className="text-lg text-primary">{job.expires_in} days</h3>
                 <p className="text-xs">Request expires in</p>
               </div>

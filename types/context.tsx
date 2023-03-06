@@ -9,8 +9,6 @@ type Loading = {
   dispatch: LoadingDispatch;
 }
 
-type App = {
+export type App = {
   loading: Loading;
 }
-
-export default App;
