@@ -56,6 +56,11 @@ const Settings: NextPage = () => {
                 <p className="ml-[.9rem]">Change password</p>
               </Link>
 
+              <Link href="/settings/support" className="flex items-center shadow-normal rounded-md px-[1.5rem] py-[1.2rem]">
+                <Image src="/settings/support.svg" alt="password" width={21} height={21}/>
+                <p className="ml-[.9rem]">Support</p>
+              </Link>
+
               {/* <Link href="/settings/change-language" className="flex items-center shadow-normal rounded-md px-[1.5rem] py-[1.2rem]">
                 <Image src="/settings/language.svg" alt="language" width={18} height={18}/>
                 <p className="ml-[.9rem]">Change language</p>

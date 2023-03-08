@@ -19,7 +19,6 @@ const Notifications: NextPage = () => {
       setNotifications(notifications);
     } catch (err: any) {
       context?.loading.dispatch({type: 'OFF'});
-      alert('Failed to retrieve notification, please try again later');
     }
   }
 
